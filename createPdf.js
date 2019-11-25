@@ -44,10 +44,8 @@ const courses = [
         attendance: "100%"
     }
 ];
-const doc = new PDFDocument;
+const doc = new PDFDocument({size: "A4"});
 
-// Pipe its output somewhere, like to a file or HTTP response
-// See below for browser usage
 doc.pipe(fs.createWriteStream('output.pdf'));
 
 doc.image("./logo.png", 20,20,{height:50});
