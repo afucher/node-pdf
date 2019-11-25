@@ -49,7 +49,11 @@ const doc = new PDFDocument;
 // Pipe its output somewhere, like to a file or HTTP response
 // See below for browser usage
 doc.pipe(fs.createWriteStream('output.pdf'));
+
+doc.image("./logo.png", 20,20,{height:50});
+doc.moveDown();
 const {x} = doc;
+
 printHeader(doc);
 doc.x = x;
 courses.forEach(course => {
